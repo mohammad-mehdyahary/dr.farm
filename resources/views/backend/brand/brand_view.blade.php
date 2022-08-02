@@ -2,5 +2,4 @@
 
 @section('admin')
 
-xgmx
 @endsection
