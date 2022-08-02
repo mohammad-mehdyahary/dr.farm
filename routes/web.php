@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\FruitController;
 use App\Http\Controllers\Frontend\IndexController;
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +56,9 @@ Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verifi
         $user = User::find($id);
         return view('dashboard',compact('user'));
     })->name('dashboard');
+});
+// admin fruits
+Route::prefix('fruit')->group(function(){
+Route::get('/view', [FruitController::class, 'FruitView'])->name('all.fruit');
+   
 });
