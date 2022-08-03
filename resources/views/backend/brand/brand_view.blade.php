@@ -38,8 +38,8 @@
                             <td>{{ $item->fruit_name_fa }}</td>
                             <td><img src="{{ asset($item->fruit_image) }}" style="width:70px;height:40px;"></td>
                             <td>
-                                <a href="" class="btn btn-info">ویرایش</a>
-                                <a href="" class="btn btn-danger">حذف</a>
+                                <a href="" class="btn btn-info mb-5">ویرایش</a>
+                                <a href="" class="btn btn-danger mb-5">حذف</a>
                             </td>
                             
                         </tr>
