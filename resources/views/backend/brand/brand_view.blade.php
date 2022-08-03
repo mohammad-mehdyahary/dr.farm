@@ -11,11 +11,11 @@
         <div class="row">
             
 
-          <div class="col-12">
+          <div class="col-8">
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">لیست برند ها</h3>
+                <h3 class="box-title">لیست برند</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -55,6 +55,65 @@
             <!-- /.box -->          
           </div>
           <!-- /.col -->
+
+          <div class="col-4">
+
+            <div class="box">
+               <div class="box-header with-border">
+                 <h3 class="box-title">افزودن برند</h3>
+               </div>
+               <!-- /.box-header -->
+               <div class="box-body">
+                   <div class="table-responsive">
+                     
+                    <form method="POST" action="{{ route('brand.store') }}" enctype="multipart/form-data" style="direction: rtl;">
+                        @csrf
+                         					
+                             
+                                    <div class="form-group">
+                                        <h5>نام برند (انگلیسی)<span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text"  name="fruit_name_en" class="form-control"  >
+                                          @error('fruit_name_en')
+                                              <span class="text-danger">{{ $message }}</span>
+                                          @enderror
+                                        </div>
+                                    </div>
+                                
+                                
+                                    <div class="form-group">
+                                        <h5>نام برند (فارسی)<span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text"  name="fruit_name_fa" class="form-control"  >
+                                            @error('fruit_name_fa')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                      </div>
+                                    </div>
+                                
+                                
+                                    <div class="form-group">
+                                        <h5>عکس برند <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="file" name="fruit_image"  class="form-control"  >
+                                            @error('fruit_image')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                        </div>
+                                    </div>
+                                
+                              
+                              
+                           <div class="text-xs-right">
+                               <input  type="submit" value="افزودن" class="btn btn-rounded btn-info">
+                           </div>
+                       </form> 
+                   </div>
+               </div>
+               <!-- /.box-body -->
+             </div>
+             <!-- /.box -->          
+           </div>
         </div>
         <!-- /.row -->
       </section>

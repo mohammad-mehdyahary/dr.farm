@@ -60,5 +60,6 @@ Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verifi
 // admin fruits
 Route::prefix('fruit')->group(function(){
 Route::get('/view', [FruitController::class, 'FruitView'])->name('all.fruit');
+Route::post('/store', [FruitController::class, 'BrandStore'])->name('brand.store');
    
 });
